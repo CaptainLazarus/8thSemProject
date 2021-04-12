@@ -39,7 +39,7 @@ public class SimilarImage {
 	       if(r1 == r2 && g1 == g2 && b1 == b2) countsim++;	// rgb vals of pixels match
 	       
 	       if(r1 != r2 && g1 != g2 && b1 != b2){
-		img1.setRGB(i, j, Color.white.getRGB());	// for normal (non-grayscale) img
+		img1.setRGB(i, j, Color.black.getRGB());	// for normal (non-grayscale) img
 		// img1.setRGB(i, j, Color.yellow.getRGB());	// for img in grayscale
 		// img1.setRGB(i, j, new Color(0.8f, 0.9019608f, 0.6392157f).getRGB()); // something I tried for graycale. Didnt work
 	       }
