@@ -6,11 +6,11 @@ import java.awt.Graphics2D;
 
 public class SimilarImage {
    public static void main(String[] args) throws Exception {	// no need for full direc addr
-      BufferedImage img1 = ImageIO.read(new File("/home/hrithik/Downloads/find_similarities_between_images/xray1.png"));
-      BufferedImage img2 = ImageIO.read(new File("/home/hrithik/Downloads/find_similarities_between_images/xray2.png"));
-//       ImageIO.write(img1, "jpeg", new File("/home/hrithik/Downloads/find_similarities_between_images/img4.jpeg"));
-//       BufferedImage img3 = ImageIO.read(new File("/home/hrithik/Downloads/find_similarities_between_images/img4.jpeg"));
-//       BufferedImage img3 = ImageIO.read(new File("img2.jpeg"));
+//       BufferedImage img1 = ImageIO.read(new File("/home/hrithik/Downloads/gitrepo/8thSemProject/images/1.jpg"));
+//       BufferedImage img2 = ImageIO.read(new File("/home/hrithik/Downloads/gitrepo/8thSemProject/images/2.jpg"));
+      BufferedImage img1 = ImageIO.read(new File("/home/hrithik/Downloads/gitrepo/8thSemProject/images/xray1.png"));
+      BufferedImage img2 = ImageIO.read(new File("/home/hrithik/Downloads/gitrepo/8thSemProject/images/xray2.png"));
+
       int w1 = img1.getWidth();
       int w2 = img2.getWidth();
       int h1 = img1.getHeight();
@@ -45,9 +45,11 @@ public class SimilarImage {
 	       }
             }
          }
-	 File outputfile = new File("xray_template.png");
+	 File outputfile = new File("/home/hrithik/Downloads/gitrepo/8thSemProject/images/xraytemplate.png");
 	 ImageIO.write(img1, "png", outputfile);
-	//  System.out.println("countsim: "+countsim+"/"+h1*w1+"; countparsim"+countparsim);
+	//  File outputfile = new File("/home/hrithik/Downloads/gitrepo/8thSemProject/images/normalimgtemplate.jpg");
+	//  ImageIO.write(img1, "jpg", outputfile);
+	
 	 System.out.println("countsim: "+(double)countsim/(h1*w1)*100+"; countparsim: "+(double)countparsim/(h1*w1)*100);
          double avg = diff/(w1*h1*3);
          double percentage = (avg/255)*100;	// net pixel diff
