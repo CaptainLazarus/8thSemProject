@@ -43,23 +43,23 @@ class ExtractSubtractedImg{
 				else{
 					img1.setRGB(i, j, 0);
 					img2.setRGB(i, j, 0);
-					img2.setRGB(i, j, 0);
+					img3.setRGB(i, j, 0);
 				}
 				// flag = 1;
 
 				// img1.setRGB(i, j, p1^p);
 				// img2.setRGB(i, j, p2^p);
 
-				if(count < 5){
-					System.out.println("\n----------------------\n" + 
-					"\nHex p = " + Integer.toHexString(p) + 
-					"\nHex p1 = " + Integer.toHexString(p1) + 
-					"\nHex p2 = " + Integer.toHexString(p2) + 
-					"\nHex p1^p = " + Integer.toHexString(p1^p) +
-					"\nHex p2^p = " + Integer.toHexString(p2^p) +
-					"\n----------------------\n");
-					count+=1;
-				}
+				// if(count < 5){
+				// 	System.out.println("\n----------------------\n" + 
+				// 	"\nHex p = " + Integer.toHexString(p) + 
+				// 	"\nHex p1 = " + Integer.toHexString(p1) + 
+				// 	"\nHex p2 = " + Integer.toHexString(p2) + 
+				// 	"\nHex p1^p = " + Integer.toHexString(p1^p) +
+				// 	"\nHex p2^p = " + Integer.toHexString(p2^p) +
+				// 	"\n----------------------\n");
+				// 	count+=1;
+				// }
 			}
 		}
 		return new Object[]{img1, img2, img3};
@@ -199,10 +199,10 @@ class ExtractTemplate {
 					flag = 1;
 				}
 			}
-			System.out.println("countsim: "+(double)countsim/(h1*w1)*100+"; countparsim: "+(double)countparsim/(h1*w1)*100);
-			double avg = diff/(w1*h1*3);
-			double percentage = (avg/255)*100;	// net pixel diff
-			System.out.println("Difference: "+percentage);
+			// System.out.println("countsim: "+(double)countsim/(h1*w1)*100+"; countparsim: "+(double)countparsim/(h1*w1)*100);
+			// double avg = diff/(w1*h1*3);
+			// double percentage = (avg/255)*100;	// net pixel diff
+			// System.out.println("Difference: "+percentage);
 
 		}
 
@@ -227,9 +227,10 @@ public class SimilarImage {
 		BufferedImage img1 = ImageIO.read(file[0]);
 		BufferedImage img2 = ImageIO.read(file[1]);
 		BufferedImage img3 = ImageIO.read(file[5]);
-		System.out.println("\nType 1 ->" + img1.getType() + "\nType 2 ->" + img2.getType() + "\nType 3 ->" + img3.getType());
+		// System.out.println("\nType 1 ->" + img1.getType() + "\nType 2 ->" + img2.getType() + "\nType 3 ->" + img3.getType());
 		// ImageIO.write(img1, "png", file[3]);
 		// ImageIO.write(img2, "png", file[4]);
+		// ImageIO.write(img2, "png", file[6]);
 		// System.out.println("\n---------------------------------------------------------------------------\n");
 		// System.out.println((size(file[0]) + size(file[1])));
 		// System.out.println((size(file[3]) + size(file[4])));
@@ -244,7 +245,7 @@ public class SimilarImage {
 		Object[] subtractedImages = subImagesObject.getSubtractedImg();
 		ImageIO.write((BufferedImage)subtractedImages[0], "png", file[3]);
 		ImageIO.write((BufferedImage)subtractedImages[1], "png", file[4]);
-		ImageIO.write((BufferedImage)subtractedImages[1], "png", file[6]);
+		ImageIO.write((BufferedImage)subtractedImages[2], "png", file[6]);
 
 		System.out.println("\n---------------------------------------------------------------------------\n");
 		System.out.println("Total orig size = \t\t\t" + size(file[0]) + " + " + size(file[1]) + " + " + size(file[5]) + " = \t\t" + round(size(file[0])+size(file[1])+size(file[5])) + " KB");
